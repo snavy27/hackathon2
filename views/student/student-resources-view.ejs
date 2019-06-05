@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+        /* Remove the navbar's default margin-bottom and rounded borders */ 
+        .navbar {
+          margin-bottom: 0;
+          border-radius: 0;
+        }
+        
+        /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+        .row.content {height: 450px}
+        
+        /* Set gray background color and 100% height */
+        .sidenav {
+          padding-top: 20px;
+          background-color: #f1f1f1;
+          height: 100%;
+        }
+        
+        /* Set black background color, white text and some padding */
+        footer {
+          background-color: #555;
+          color: white;
+          padding: 15px;
+        }
+        .updateform{
+          width: 400px;
+          height: 700px;
+          border: 0.025 solid rgba(200,200,200);
+        }
+
+        /* On small screens, set height to 'auto' for sidenav and grid */
+        @media screen and (max-width: 767px) {
+          .sidenav {
+            height: auto;
+            padding: 15px;
+            height:100%;
+          }
+          .row.content {height:auto;} 
+        }
+      </style>
+</head>
+<body>
+        <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                  <div class="navbar-header">
+                      <!-- <span>  <i class="fa fa-etsy" style="color:white; width: 20px" aria-hidden="true"></i> -->
+                        <a class="navbar-brand"style="color:rgba(250,250,250);" href="#">EduZone</a> 
+                    <!-- </span> -->
+                  </div>
+                  <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="/student/<%= user.email %>/">Home</a></li>
+                   
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="/student/<%=user.email%>/contact">Contact us</a></li>
+                    <li class="dropdown" ><a class="dropdown-toggle" data-toggle="dropdown" href="#">My Profile <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                           <li><a href="/student/<%= user.email %>/profile/">View Profile</a></li>
+                          <li><a href="/student/<%= user.email %>/profile/update">Update Profile</a></li>
+                        </ul>
+                      </li>
+                  </ul>
+                </div>
+              </nav>
+              <h1 style="text-align:center;"> Refer to the following articles about Web-Dev</h1>
+              <div style="text-align:center;">
+                <a class="btn btn-lg btn-primary" href="/student/<%= user.email %>/resources/view/1"> Article regarding topic-1 </a> <br> <br>
+                <a class="btn btn-lg btn-primary"> Article regarding topic-2 </a> <br> <br>
+
+                <a class="btn btn-lg btn-primary"> Article regarding topic-3 </a><br> <br>
+                <a class="btn btn-lg btn-primary"> Article regarding topic-4 </a><br><br>
+
+                
+              </div>
+</body>
+</html>

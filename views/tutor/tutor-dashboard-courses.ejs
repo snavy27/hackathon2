@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Tutor</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    body{
+         background-color: #f1f1f1;
+    }
+    button{
+      width: 300px;
+      margin:10px auto;
+    }
+    .row.content {height: 450px}
+    
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    img{
+                width: 180px;
+                height: 100px;
+                
+            }
+
+            .card{
+                border: 0.025 solid rgba(200,200,200);
+            }  
+    
+    
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }
+  </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">EduZone</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="/tutor/<%= user.email%>/">Home</a></li>
+      <li><a href="#">FAQs</a></li>
+      <li><a href="/tutor/<%= user.email%>/contact">Contact Us</a></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"> Profile <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="/tutor/<%= user.email%>/profile/">View Profile </a></li>
+          <li><a href="/tutor/<%= user.email%>/profile/update">Edit Profile </a></li>
+          
+        </ul>
+      </li>
+      
+    </ul>
+  </div>
+</nav>
+
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+      
+      <p><a href="https://en.wikipedia.org/wiki/Web_design" target="_blank">What is Web D</a></p>
+      <p><a href="https://searchenterpriseai.techtarget.com/definition/machine-learning-ML" target="_blank">What is ML</a></p>
+      <p><a href="https://www.guru99.com/what-is-big-data.html" target="_blank">What is Big Data</a></p>
+    </div>
+    <div class="col-sm-8 text-left"> 
+      <div style="background:rgb(218, 216, 216);" class="jumbotron">
+          <h1>Welcome</h1>
+      <p class="lead" style="font-size: 20px;"> EduZone provides a platform for many students across the globe to meet tutors/mentors who can help them along with their career.</p> 
+            <p class="lead"> Following are the Courses that are available in EduZone currently which can be opted by</p>
+            <p class="lead"> To start your mentorship, start with a course and post videos related to the course. A time slot has to be set for students during which you can clear their doubts personally.</p> 
+          </div>
+      
+      <hr>
+      <h3>Courses available</h3>
+      <div class="container">
+          <div class="row">
+                  <div class="card col-lg-4" style="width: 24rem;">
+                          <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREikT1jZIzYKr2LF2sUrW6sr8zxh4kxpruvDLNN7ULM0JlZ3-Taw" alt="Card image cap">
+                          <div class="card-body">
+                            <h3 class="card-title">Web Development</h3>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Register here</a>
+                          </div>
+                        </div>
+                        <div class="card col-lg-4" style="width: 24rem;">
+                              <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREikT1jZIzYKr2LF2sUrW6sr8zxh4kxpruvDLNN7ULM0JlZ3-Taw" alt="Card image cap">
+                              <div class="card-body">
+                                <h3 class="card-title">Machine Learning</h3>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Register here</a>
+                              </div>
+                            </div>
+                            <div class="card col-lg-4" style="width: 24rem;">
+                                  <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREikT1jZIzYKr2LF2sUrW6sr8zxh4kxpruvDLNN7ULM0JlZ3-Taw" alt="Card image cap">
+                                  <div class="card-body">
+                                    <h3 class="card-title">Big Data</h3>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <a href="#" class="btn btn-primary">Register here</a>
+                                  </div>
+                                </div>
+          </div>
+      </div>
+      <button class="btn btn-lg btn-default btn-block btn-warning"><a href="/tutor/<%= user.email %>/discuss" style="color: black">Discuss with student</a></button>  
+
+
+      <!-- <button type="button" class="btn btn-success btn-lg">Web D</button>
+      <br>
+      <button type="button" class="btn btn-success btn-lg">ML</button>
+      <br>
+      <button type="button" class="btn btn-success btn-lg">Big data</button> -->
+
+    </div>
+    <div class="col-sm-2 sidenav">
+      
+    </div>
+  </div>
+</div>
+
+
+
+</body>
+</html>

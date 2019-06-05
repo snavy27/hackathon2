@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 450px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+        height:100%;
+      }
+      .row.content {height:auto;} 
+    }
+  </style>
+</head>
+
+<body>
+
+        <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                  <div class="navbar-header">
+                      <!-- <span>  <i class="fa fa-etsy" style="color:white; width: 20px" aria-hidden="true"></i> -->
+                        <a class="navbar-brand"style="color:rgba(250,250,250);" href="#">EduZone</a> 
+                    <!-- </span> -->
+                  </div>
+                  <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="/company/<%= user.email %>/">Home</a></li>
+                   
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="/company/<%= user.email %>/contact">Contact us</a></li>
+                    <li class="dropdown" ><a class="dropdown-toggle" data-toggle="dropdown" href="#">My Profile <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                           <li><a href="/company/<%= user.email %>/profile">View Profile</a></li>
+                          <li><a href="/company/<%= user.email %>/profile/update">Update Profile</a></li>
+                        </ul>
+                      </li>
+                  </ul>
+                </div>
+              </nav>
+
+              <div class="container-fluid text-center">    
+                    <div class="row content">
+                      <div class="col-sm-2 sidenav">
+                              <div class="sidenav">
+                                      <!-- <button class="btn btn-lg btn-default btn-block btn-info " ><a href="#" style="color: black">Courses Available</a></button> 
+                                      <button class="btn btn-lg btn-default btn-block btn-warning"><a href="opted" style="color: black">Courses Opted</a></button>  
+                                      <button class="btn btn-lg btn-default btn-block btn-success"><a href="resources" style="color: black">Resources</a></button>       -->
+                                   
+                                    </div>
+                        
+                      </div>
+
+                      <div class="col-sm-8 text-left"> 
+                          <h3>View Profile:</h3>
+                            <h1><%=  user.name%>
+                            </h1>
+                            <hr>
+                            <p>Remember, profile can always be updated using 'update profile' in dropdown menu.</p>
+                            
+                            <hr>
+                            
+                            <table class="table table-striped">
+                                    
+                                        
+                                      <tr>
+                                          <td>
+                                               
+                                                        <th scope="col">Company Name</th>
+                                                    
+                                          </td>
+                                          <td>
+                                                
+                                                    <td><%=  user.name%></td>
+                                                    
+                                          </td>                            
+                                      </tr>
+                                                                              
+                                      <tr>
+                                            <td>
+                                                 
+                                                          <th scope="col">About the Company</th>
+                                                     
+                                            </td>
+                                            <td>
+                                               
+                                                      <td> <%=  user.about%></td>
+                                                     
+                                            </td>                            
+                                        </tr>
+                                                                                
+                                      <tr>
+                                            <td>
+                                                 
+                                                          <th scope="col">Company location</th>
+                                                    
+                                            </td>
+                                            <td>
+                                                 
+                                                      <td><%=  user.location%></td>
+                                                 
+                                            </td>                            
+                                        </tr>
+                            
+                                            <tr>
+                                                    <td>
+                                                         
+                                                                  <th scope="col">Contact Number</th>
+                                                            
+                                                    </td>
+                                                    <td>
+                                                        
+                                                              <td> <%=  user.number%></td>
+                                                            
+                                                    </td>                            
+                                                </tr>
+                                                <tr>
+                                                        <td>
+                                                             
+                                                                      <th scope="col">Email Address</th>
+                                                                
+                                                        </td>
+                                                        <td>
+                                                            
+                                                                  <td> <%=  user.email%></td>
+                                                                
+                                                        </td>                            
+                                                    </tr>
+            
+                                  </table>
+                                  
+                                  <hr>
+                                </div>
+          
+                      <div class="col-sm-2 sidenav">
+                           
+                           
+                        </div> 
+                        
+                    
+                </div>
+                </div>
+    
+      
+     
+
+
+<!-- <footer class="container-fluid text-center">
+<p>Footer Text</p>
+</footer> -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Company</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 450px}
+    body{
+         background-color: #f1f1f1;
+    }
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }
+  </style>
+</head>
+<body>
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  NAVBAR  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" id="logo"href="#">EduZone</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="/company/<%= user.email %>/">Home</a></li>
+      <li><a href="#">FAQs</a></li>
+      <li><a href="/company/<%= user.email %>/contact">Contact Us</a></li>
+      <li class="dropdown nav justify-content-end" id="p"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Profile<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="/company/<%= user.email %>/profile/">View Profile</a></li>
+          <li><a href="/company/<%= user.email %>/profile/update">Edit Profile</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+  
+  <!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@2  -->
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+        <div class="sidenav">
+          </div>
+    </div>
+    <div class="col-sm-8 text-left"> 
+        <!-- <div style="background:rgb(218, 216, 216);" class="jumbotron"> -->
+            <h1>Update Profile!</h1>
+            <!-- <p class="lead" style="font-size: 20px;"> EduZone provides a platform for many students across the globe to meet tutors/mentors who can help them along with their career.</p> 
+            <p class="lead"> Fill the details below mentioning the skills or requirements you are searching for along with other basic details about Company to be revealed to the applicants.</p>
+            <p class="lead"> Mentions the details in the POST box that are to be posted as Ads to the applicants of interest.</p> -->
+          <!-- </div> -->
+      <form method="POST" action="/company/<%= user.email %>/profile/update/?_method=PUT">
+          <div class="form-group">
+              <label for="exampleFormControlInput1">Company Name</label>
+              <input type="text" class="form-control" name="company[name]" value="<%= user.name%>" placeholder="ABC LTD">
+            </div>
+            <div class="form-group">
+                    <label for="exampleFormControlInput1">Email Address</label>
+                    <input type="email" class="form-control" name="company[email]" value="<%= user.email%>" placeholder="abc@abc.com">
+                  </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">About the Company</label>
+                <input type="text" class="form-control" name="company[about]" value="<%= user.about%>" placeholder="">
+              </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Company Location</label>
+                <input type="text" class="form-control" name="company[location]" value="<%= user.location%>" placeholder="Required*">
+              </div>
+              <div class="form-group">
+                  <label for="exampleFormControlInput1">Contact Number</label>
+                  <input type="text" class="form-control" name="company[number]" value="<%= user.number%>" placeholder="1234567890">
+                </div>
+
+  
+  
+  
+  
+
+<hr>
+  <button type="submit" class="btn btn-success">SAVE CHANGES</button>
+</form>
+      
+      
+    </div>
+    <div class="col-sm-2 sidenav">
+      
+    </div>
+  </div>
+</div>
+
+
+
+</body>
+</html>
